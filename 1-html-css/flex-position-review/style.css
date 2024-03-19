@@ -1,0 +1,73 @@
+/*
+    CSS has
+    *rulesets
+    *selectors
+    *declarations
+    *properties
+    *values
+
+    Ruleset
+
+    selector { declaration
+        property: value;
+        property: value;
+    }
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bebebe;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    /* doesn't work bc main axis on flexdir column is top to bottom */
+    align-items: flex-end;
+    gap: 0.125em;
+}
+
+a {
+    color: rgb(192, 107, 27);
+}
+
+#about {
+    color: black;
+    order: 2;
+    align-self: flex-start;
+}
+/* 
+    ? Static
+    * default
+    *positioned in relatin to elements
+    *top, bottom, left, right, z-index have NO effect
+
+    ? Relative
+    * just like static
+    * CAN be changed top, bottom, left, right, z-index
+    * values are relative to its original static position
+    ! DON"T USE IT. Breaks the flow.
+
+    ? Absolute
+    * removes the element from the flow
+    * positions it relative to parent container
+    * if parent is static, it will move outside parent container to next static container
+    * if parent is relative, it will move within it's parent container
+    * positioning defined by top, bottom, left, right, z-index
+
+    ? Fixed
+    * like absolute except it is positioned to viewport
+    * doesn't move when scrolling
+    * positioning defined by top, bottom, left, right, z-index
+    * Fixed will NOT scroll away
+
+    ? Sticky
+    * mix of relative and fixed
+    * relative to the flow
+    * position definition used for when you start scrolling
+    * stays fixed when scrolling; relative when stationary
+
+    ? EMMETT 
+    ! USE EMMETT
+*/
