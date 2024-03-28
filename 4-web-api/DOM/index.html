@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- FINDING ELEMENTS -->
+    <div id="list">
+        <div id="listTitle">To Do List</div>
+        <div id="toDoList">
+            <ul id="ulToDo">
+                <li class="listItem">Clean bathroom</li>
+                <li class="listItem">Pack Clothes</li>
+                <li class="listItem">Pack Bathroom stuff</li>
+                <li class="listItem">Check if doors and windows closed</li>
+                <li class="listItem">Clean Kitchen</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Event Listeners -->
+    <div id="inputField" style="text-align: center">
+        <input type="text" id="listInput" placeholder="ToDo Item" >
+        <button id="submit">Add Item</button>
+    </div>
+
+    <!-- Create something new -->
+    <div>
+        <button id="table-btn">Build</button>
+        <div id="shell-div">
+
+        </div>
+    </div>
+
+    <!-- Inline Scripting -->
+    <!-- <script>
+        console.log(`Within the HTML doc wrapped in Script element`)
+    </script> -->
+
+    <!-- 
+        External File Scripting
+        - helps with maintainability
+        - request triggered to obtain script
+    -->
+
+    <script src="./index.js"></script>
+</body>
+</html>
