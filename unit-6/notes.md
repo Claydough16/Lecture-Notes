@@ -93,3 +93,55 @@ const UserSchema = new mongoose.Schema({
         - localhost:4000/user/signup
 */
 ```
+
+## Bcrypt
+`npm i bcrypt`
+- dependency that handles encryption of data
+    - mostly common for passwords (but not limited)
+
+### Encryption
+- Plain text passwords are not secure when stored within the database.
+    - Allows another layer of security for both users and the application.
+    - If the database never knows it, less desired to "hack".
+
+## Hashing
+- An algorithm to change plain text into various characters.
+    - transformed as a **one-way value**.
+    - practically impossible to turn hashed value back to original string.
+- Encrypted prior to storing to DB
+- No matter length of string (password), hash value is the same length.
+    - Like strings will result in the same hashed output.
+        - **needs `salting`**
+
+## Salting
+- includes random strings within the plain text being hashed.
+- Makes for unpredictability for the hashed value.
+- We can denote the number of "salts"
+    - Good value is 10-13 iterations.
+
+example:
+```js
+bcrypt.hashSync("abc", 10);
+```
+
+-first param = string (password)
+-second param = number of times the password will be salted (randomized)
+
+## JWT / JSON Web Token
+- `npm i jsonwebtoken`
+- A way for our server to authenticate the user.
+
+example code:
+```js
+const token = jwt.sign({id: user._id}, "secret message", {expiresIn: 60 * 60 * 24});
+```
+- `sign(payload,message,options)`
+- 3 arguments:
+    - payload
+        - In the sample we are using an object that details the id of the user.
+    - encrypt/decrypt message
+        - passed in as a string in this sample
+        - Typically store as a variable in the `.env`
+    - options (expiration)
+        - represents seconds or a string time span
+            - ex: `2 days` or `10h` or `60 * 60 * 24`
