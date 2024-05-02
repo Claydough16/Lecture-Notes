@@ -145,3 +145,24 @@ const token = jwt.sign({id: user._id}, "secret message", {expiresIn: 60 * 60 * 2
     - options (expiration)
         - represents seconds or a string time span
             - ex: `2 days` or `10h` or `60 * 60 * 24`
+
+```js
+/*
+! Challenge
+    - Create a Schema called MovieSchema
+    - Properties within:
+        "title": string, required
+        "genre": string
+        "rating": string, required
+        "length": number, required
+        "releaseYear": number
+    - Create a new controller called `movie.controller.js`
+      - boilerplate the controller (no routes are needed right now)
+      - consider the file/folder structure.
+    - Connect the controller to the application (app.js)
+    - Connect the MovieSchema to the controller.
+        
+    Note:
+        Consider how the User model was created.
+*/
+```
