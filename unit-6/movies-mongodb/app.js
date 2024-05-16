@@ -4,7 +4,8 @@ const app = express();
 const PORT = process.env.PORT; // points to our environment file and puts the value of PORT from that variable into this PORT variable.
 const userController = require('./controllers/user.controller.js');
 const movieController = require('./controllers/movie.controller.js');
-const validateSession = require('./middleware/validate-session.js');
+// const validateSession = require('./middleware/validate-session.js');
+const cors = require('cors');
 
 //! MongoDB Connection
 const mongoose = require('mongoose'); // used from node.modules.
@@ -20,6 +21,7 @@ db.once('open', () => console.log(`Connected: ${MONGO}`));
 app.use(express.json()) // added to allow us to accept JSON data from the body of our client.
 
 //* Routes / Controllers
+app.use(cors());
 app.use('/user', userController)
 // app.use(validateSession);
 // when active will block all routes below.
