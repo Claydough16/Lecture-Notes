@@ -85,3 +85,53 @@ function useState(startingData) {
 ```jsx
 import { useRef } from 'react'
 ```
+# Challenge
+```
+
+/* 
+    - Create a login folder within auth.
+        - Create a JSX file called login (consider how the file/folder should be set)
+    - Create a functional component called Login
+    - Setup a form:
+        - Above the form, make an h2 that displays "Login"
+        - Use components from Reactstrap (hint: consider Signup)
+        - No labels are required.
+        - Two input fields: 
+            - email: use a placeholder to denote "Email"
+            - password: use a placeholder to denote "Password"
+    - Import useRef:
+        - create variables to reference both email & password.
+        - incorporate within the Input components
+    - Handle Submit
+        - Set the form to fire off an async function called "handleSumbit"
+            - write is as an arrow function.
+        - Within the function
+            - console.log both useRef variables that were established.
+    - Export the component.
+    - Import & mount the Login component within Auth.jsx
+        - Note: Frame the component in the same fashion as Signup.
+*/
+```
+
+# useEffect()
+- Allows us to perform side effects in functional components.
+- Accepts two arguments
+  - function
+  - dependency
+    - optional
+    - Can denote a specific event to to trigger
+
+```js
+useEffect(() => {
+  // Runs on every render
+});
+
+useEffect(() => {
+  // Runs only on the first render
+}, []);
+
+useEffect(() => {
+  // Runs on first render
+  // Runs any time any dependency changes
+}, [state]);
+```
